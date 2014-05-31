@@ -1,0 +1,53 @@
+//  ViewController.m
+//  FRIDwork
+//
+//  Created by Wen-Jen Yu on 2014/5/30.
+//  Copyright (c) 2014年 299410596. All rights reserved.
+//
+
+#import "ViewController.h"
+
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    mainlabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 220, 50)];
+    mainlabel.text = @"FRID期末作業";
+    [mainlabel setFont:[UIFont fontWithName:@"Helvetica" size:25]];
+    [self.view addSubview:mainlabel];
+    
+    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button1.frame = CGRectMake(25, 309, 70, 110);
+    [button1 setTitle:@"學號" forState:UIControlStateNormal];
+    [button1 setBackgroundColor:[UIColor blueColor]];
+    [button1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(onebutton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button1];
+    
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button2.frame = CGRectMake(225, 309, 70, 110);
+    [button2 setTitle:@"姓名" forState:UIControlStateNormal];
+    [button2 setBackgroundColor:[UIColor blueColor]];
+    [button2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button2 addTarget:self action:@selector(twobutton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button2];
+	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+- (void)onebutton:(id)sender {
+    mainlabel.text = @"學號：299410596";
+}
+- (void)twobutton:(id)sender {
+    mainlabel.text = @"姓名：陳博勛";
+}
+@end
